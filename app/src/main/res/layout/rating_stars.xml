@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="trip"
+            type="com.krichen.trips.data.Trip" />
+        <variable
+            name="star_size"
+            type="String"/>
+    </data>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility= "@{trip.pilot.rating == 0 ? View.GONE : View.VISIBLE}">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="40dp"
+            android:src="@{trip.pilot.rating >= 1 ? @drawable/filled:@drawable/empty}"
+            android:contentDescription="@string/rating_star"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@{trip.pilot.rating >= 2 ? @drawable/filled:@drawable/empty}"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:contentDescription="@string/rating_star" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@{trip.pilot.rating >= 3 ? @drawable/filled:@drawable/empty}"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:contentDescription="@string/rating_star" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@{trip.pilot.rating >= 4 ? @drawable/filled:@drawable/empty}"
+            android:layout_marginStart="120dp"
+            android:layout_marginLeft="120dp"
+            android:contentDescription="@string/rating_star" />
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@{trip.pilot.rating >= 5 ? @drawable/filled:@drawable/empty}"
+            android:layout_marginStart="160dp"
+            android:layout_marginLeft="160dp"
+            android:contentDescription="@string/rating_star" />
+    </RelativeLayout>
+</layout>

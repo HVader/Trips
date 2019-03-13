@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="trip"
+            type="com.krichen.trips.data.Trip" />
+        <variable
+            name="tripListener"
+            type="com.krichen.trips.trips.TripItemListener" />
+
+    </data>
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="false"
+        android:onClick="@{(view)->tripListener.onTripClicked(view,trip)}">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:contentDescription="@string/desc_pilot_image"
+            android:onClick="@{(view)->tripListener.onTripClicked(view,trip)}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:profileImage="@{trip.pilot.avatar}" />
+
+        <TextView
+            android:id="@+id/pilot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="21dp"
+            android:fontFamily="sans-serif"
+            android:letterSpacing="0.19"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="@{trip.pilot.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="lollipop" />
+
+        <TextView
+            android:id="@+id/pickup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="2sp"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:text="@{trip.pick_up.name}"
+            android:textColor="@color/warm_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pilot"
+             />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:contentDescription="@string/arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/pickup"
+            app:layout_constraintStart_toEndOf="@+id/pickup"
+            app:layout_constraintTop_toTopOf="@+id/pickup"
+            app:srcCompat="@drawable/ic_arrow"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/dropoff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:fontFamily="sans-serif-medium"
+            android:lineSpacingExtra="2sp"
+            android:textSize="14sp"
+            android:textStyle="normal"
+            android:text="@{trip.drop_off.name}"
+            android:textColor="@color/warm_grey"
+            app:layout_constraintBottom_toBottomOf="@+id/pickup"
+            app:layout_constraintStart_toEndOf="@+id/imageView2" />
+
+        <include
+            android:id="@+id/includedRating"
+            layout="@layout/rating_stars"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="88dp"
+            android:layout_marginLeft="88dp"
+            android:layout_marginTop="68dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trip="@{trip}" />
+    </android.support.constraint.ConstraintLayout>
+
+
+</layout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="modelview"
+            type="com.krichen.trips.tripdetail.TripDetailViewModel"/>
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/planet_pickup"
+                android:layout_width="155dp"
+                android:layout_height="155dp"
+                android:layout_marginTop="96dp"
+                android:translationX="-25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/pick_up_planet_image"
+                app:profileImage="@{modelview.trip.pick_up.picture}"/>
+
+            <ImageView
+                android:id="@+id/planet_dest"
+                android:layout_width="310dp"
+                android:layout_height="310dp"
+                android:layout_marginStart="98dp"
+                android:layout_marginLeft="98dp"
+                android:layout_marginTop="64dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars"
+                android:contentDescription="@string/planet_dest"
+                app:profileImage="@{modelview.trip.drop_off.picture}"/>
+
+            <FrameLayout
+                android:id="@+id/frameLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="254dp"
+                android:background="@color/black"
+                android:translationZ="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/pilot_image"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="278dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars"
+                app:profileImage="@{modelview.trip.pilot.avatar}" />
+
+            <TextView
+                android:id="@+id/pilot_name"
+                android:layout_width="216dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:fontFamily="sans-serif"
+                android:letterSpacing="0.31"
+                android:lineSpacingExtra="0sp"
+                android:maxLines="2"
+                android:textAllCaps="true"
+                android:text="@{modelview.trip.pilot.name}"
+                android:textColor="#ffffff"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:translationZ="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/frameLayout"
+                tools:targetApi="lollipop" />
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="120dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/frameLayout"
+                android:translationZ="5dp"
+                android:background="@color/warm_grey"/>
+
+            <RelativeLayout
+                android:layout_width="144dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="144dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frameLayout">
+
+                <TextView
+                    android:id="@+id/departure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/warm_grey"
+                    android:lineSpacingExtra="2sp"
+                    android:text="@string/departure"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:letterSpacing="0.19"
+                    android:text="@{modelview.trip.pick_up.name}"
+                    android:layout_marginTop="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="@color/warm_grey"
+                    android:letterSpacing="0.19"
+                    android:text="2:12 PM"
+                    android:layout_marginTop="45dp"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="144dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="144dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frameLayout">
+
+                <TextView
+                    android:id="@+id/arrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/warm_grey"
+                    android:lineSpacingExtra="2sp"
+                    android:text="@string/arrival"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:letterSpacing="0.19"
+                    android:text="@{modelview.trip.drop_off.name}"
+                    android:layout_marginTop="24dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="@color/warm_grey"
+                    android:letterSpacing="0.19"
+                    android:text="2:12 PM"
+                    android:layout_marginTop="45dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="144dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="232dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frameLayout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/warm_grey"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Trip Distance"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:letterSpacing="0.19"
+                    tools:text="2,478,572 KM"
+                    android:layout_marginTop="24dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="144dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="232dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frameLayout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/warm_grey"
+                    android:lineSpacingExtra="2sp"
+                    android:text="Trip Distance"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="#ffffff"
+                    android:letterSpacing="0.19"
+                    tools:text="2,478,572 KM"
+                    android:layout_marginTop="24dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="312dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="289dp"
+                android:translationZ="6dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/frameLayout">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:textStyle="normal"
+                    android:textColor="@color/warm_grey"
+                    android:lineSpacingExtra="2sp"
+                    android:text="@string/pilot_rating"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="@color/warm_grey"
+                    android:layout_marginTop="36dp"
+                    android:letterSpacing="0.21"
+                    android:text="@string/user_didn_t_rate_yet"
+                    android:textAllCaps="true"
+                    android:visibility= "@{modelview.trip.pilot.rating == 0 ? View.VISIBLE : View.GONE}"/>
+                <include
+                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:id="@+id/includedRating"
+                    layout="@layout/rating_stars"
+                    app:trip="@{modelview.trip}" />
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</layout>

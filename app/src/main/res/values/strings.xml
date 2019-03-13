@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Trips</string>
+    <string name="desc_pilot_image">pilot image</string>
+    <string name="arrow">arrow</string>
+    <string name="planet_dest">planet_dest</string>
+    <string name="pick_up_planet_image">pick up planet image</string>
+    <string name="arrival">Arrival</string>
+    <string name="departure">Departure</string>
+    <string name="pilot_rating">Pilot Rating</string>
+    <string name="rating_star">rating star</string>
+    <string name="user_didn_t_rate_yet">user didn’t rate yet</string>
+</resources>
